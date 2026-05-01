@@ -4,10 +4,8 @@ module muxes (
     output logic       y0_o, y1_o
 );
 
-    // 2:1 mux controlled by XOR(a_i, b_i)
     assign y0_o = (a_i ^ b_i) ? d_i : c_i;
 
-    // 4:1 mux
     always_comb begin
         case (sel4_i)
             2'b00: y1_o = 1'b0;
